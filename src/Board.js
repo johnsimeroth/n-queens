@@ -218,7 +218,7 @@
       var colIndex = minorDiagonalColumnIndexAtFirstRow;
       var rowIndex = 0;
       //  while colIndex < 0
-      while (colIndex >= this.attributes.n - 1) {
+      while (colIndex > this.attributes.n - 1) {
         colIndex--;
         rowIndex++;
       }
@@ -227,7 +227,6 @@
       var sum = 0;
       // while col and row are < n
       while (colIndex >= 0 && rowIndex < this.attributes.n) {
-        //console.log('this in minor:', this);
         //   get value at this row, this index, add to sum
         var value = this.attributes[rowIndex][colIndex];
         sum += value;
@@ -244,18 +243,9 @@
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
-      // var matrixWeCareAbout = [
-      //   [0, 0, 1, 0],
-      //   [0, 0, 0, 0],
-      //   [1, 0, 0, 0],
-      //   [0, 0, 0, 0]
-      // ];
-      // var stopWhen = '{"0":[0,0,1,0],"1":[0,0,0,0],"2":[1,0,0,0],"3":[0,0,0,0],"n":4}';
 
-      // if (stopWhen === JSON.stringify(this.attributes)) {
-      //  }
       console.log('yay we made it');
-      for (let colIndex = 1; colIndex < ((2 * this.attributes.n) - 3); colIndex++) {
+      for (let colIndex = 1; colIndex <= ((2 * this.attributes.n) - 3); colIndex++) {
         if (this.hasMinorDiagonalConflictAt(colIndex)) {
           console.log('colIndex:', colIndex);
           return true;
