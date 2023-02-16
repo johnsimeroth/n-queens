@@ -192,8 +192,9 @@ describe('Board', function() {
     it('should not find a majorDiagonal conflict', function() {
       expect(board.hasAnyMajorDiagonalConflicts()).to.be.equal(false);
     });
-
+    debugger;
     it('should find a minorDiagonal conflict', function() {
+      // debugger;
       expect(board.hasAnyMinorDiagonalConflicts()).to.be.equal(true);
     });
 
