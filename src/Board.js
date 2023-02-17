@@ -243,8 +243,6 @@
 
     // test if any minor diagonals on this board contain conflicts
     hasAnyMinorDiagonalConflicts: function() {
-
-      console.log('yay we made it');
       for (let colIndex = 1; colIndex <= ((2 * this.attributes.n) - 3); colIndex++) {
         if (this.hasMinorDiagonalConflictAt(colIndex)) {
           console.log('colIndex:', colIndex);
